@@ -1,0 +1,186 @@
+
+:root {
+  font-family: Inter, system-ui, Arial, sans-serif;
+
+  color: #ffffff;
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Colores principales */
+  --fondo: #000000;
+  --tarjeta: #101d3a;
+  --borde: #233e68;
+
+  /* Textos */
+  --texto: #ffffff;
+  --secundario: #b3c2db;
+
+  /* Botones */
+  --principal: #2459dc;
+  --principal-hover: #3474f5;
+
+  /* Estados */
+  --exito: #22c55e;
+  --error: #ef4444;
+}
+
+/* Configuración general */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--fondo);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+/* Contenedor principal */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Títulos destacados */
+h1,
+h2,
+h3,
+h4 {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+/* Textos */
+p,
+label,
+span,
+li {
+  color: var(--texto);
+}
+
+label {
+  font-weight: 500;
+}
+
+/* Formularios */
+input,
+select,
+textarea {
+  font: inherit;
+  color: #ffffff;
+  background-color: #162749;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--principal);
+  outline-offset: 1px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--secundario);
+}
+
+input[type="checkbox"] {
+  accent-color: var(--exito);
+  width: 18px;
+  height: 18px;
+}
+
+/* Botones */
+button {
+  font: inherit;
+  background-color: var(--principal);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--principal-hover);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Enlaces */
+a {
+  color: #70a0ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Separadores */
+hr {
+  border: none;
+  border-top: 1px solid var(--borde);
+  margin: 20px 0;
+}
+
+/* Accesibilidad */
+:focus-visible {
+  outline: 2px solid var(--principal);
+  outline-offset: 3px;
+}
+
+/* Scrollbar oscura */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #233e68;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #34558b;
+}
