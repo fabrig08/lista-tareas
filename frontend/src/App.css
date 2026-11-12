@@ -406,3 +406,354 @@ hr {
   width: fit-content;
   margin: 20px auto;
 }
+
+/* ====================================
+   MEJORAS VISUALES FINALES
+==================================== */
+
+/* Fondo general */
+
+body {
+  background: #0b1223;
+}
+
+/* Contenedor principal */
+
+#root > div {
+  max-width: 1100px;
+}
+
+/* Formularios más compactos */
+
+form {
+  max-width: 680px;
+  margin: 22px auto 30px;
+  padding: 26px;
+  border-radius: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+/* Campos */
+
+form input:not([type="checkbox"]),
+form select,
+form textarea {
+  padding: 12px 14px;
+  border: 1px solid #30466d;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #6485ff;
+  outline: 2px solid rgba(100, 133, 255, 0.2);
+}
+
+/* Etiquetas */
+
+form label {
+  font-size: 14px;
+}
+
+/* Botones */
+
+button {
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Tarjetas de tareas */
+
+ul > li {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* No alterar el formulario de edición */
+
+ul > li form {
+  max-width: 100%;
+  margin: 20px 0 0;
+  box-shadow: none;
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+  form {
+    max-width: 100%;
+    padding: 18px;
+    margin: 18px auto 24px;
+  }
+
+  form input:not([type="checkbox"]),
+  form select,
+  form textarea {
+    font-size: 16px;
+  }
+}
+
+/* ====================================
+   NUEVA DISTRIBUCIÓN DE TAREAS
+==================================== */
+
+/* Más espacio para el contenido */
+
+#root > div {
+  max-width: 1250px;
+}
+
+/* Formulario a la izquierda y vista previa a la derecha */
+
+.todo-crear-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+  width: 100%;
+  margin: 20px 0 32px;
+}
+
+.todo-crear-panel,
+.todo-vista-previa {
+  min-width: 0;
+  padding: 26px;
+  background: #111e39;
+  border: 1px solid #30466d;
+  border-radius: 18px;
+}
+
+.todo-crear-panel h3,
+.todo-vista-previa h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.todo-crear-panel > p,
+.todo-previa-ayuda {
+  color: #a9bbd7;
+  font-size: 0.9rem;
+}
+
+.todo-crear-panel form {
+  max-width: none;
+  width: 100%;
+  margin: 20px 0 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.todo-crear-panel form > div {
+  margin-bottom: 16px;
+}
+
+.todo-crear-panel textarea {
+  min-height: 85px;
+}
+
+.todo-crear-panel button[type="submit"] {
+  width: 100%;
+  margin: 8px 0 0;
+}
+
+/* Vista previa */
+
+.todo-previa-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.todo-previa-encabezado span {
+  color: #a9bbd7;
+  font-size: 0.8rem;
+}
+
+.todo-previa-tarjeta {
+  margin-top: 25px;
+  padding: 24px;
+  background: #192b4d;
+  border: 1px solid #3a5178;
+  border-radius: 14px;
+  overflow-wrap: anywhere;
+}
+
+.todo-previa-tarjeta h4 {
+  margin: 0 0 14px;
+  font-size: 1.3rem;
+}
+
+.todo-previa-tarjeta p {
+  color: #b8c8e0;
+  margin: 0 0 24px;
+}
+
+.todo-previa-datos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-previa-datos span {
+  padding: 7px 12px;
+  background: #293e60;
+  border-radius: 20px;
+  color: #e1eaff;
+  font-size: 0.85rem;
+}
+
+.todo-previa-datos .prioridad-alta {
+  background: #642b35;
+  color: #fecaca;
+}
+
+.todo-previa-datos .prioridad-media {
+  background: #55451d;
+  color: #fde68a;
+}
+
+.todo-previa-datos .prioridad-baja {
+  background: #1d503c;
+  color: #bbf7d0;
+}
+
+.todo-previa-estado {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 25px;
+  color: #b8c8e0;
+  font-size: 0.9rem;
+}
+
+.todo-punto-pendiente {
+  width: 9px;
+  height: 9px;
+  background: #fbbf24;
+  border-radius: 50%;
+}
+
+/* ====================================
+   LISTA DE TAREAS EN TARJETAS
+==================================== */
+
+ul.todo-lista {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  margin-top: 24px;
+  padding: 0;
+}
+
+ul.todo-lista > li {
+  padding: 22px;
+  min-width: 0;
+  background: #111e39;
+  border: 1px solid #30466d;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+ul.todo-lista > li:hover {
+  border-color: #597bd4;
+}
+
+ul.todo-lista > li p {
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+ul.todo-lista > li > label span {
+  font-size: 1.05rem;
+}
+
+ul.todo-lista > li > button {
+  min-height: 40px;
+  padding: 9px 14px;
+}
+
+/* Edición dentro de las tarjetas */
+
+ul.todo-lista > li form {
+  max-width: 100%;
+  margin: 18px 0 0;
+}
+
+/* ====================================
+   RESPONSIVE
+==================================== */
+
+@media (max-width: 800px) {
+  .todo-crear-layout {
+    grid-template-columns: 1fr;
+  }
+
+  ul.todo-lista {
+    grid-template-columns: 1fr;
+  }
+
+  .todo-crear-panel,
+  .todo-vista-previa {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .todo-crear-layout {
+    gap: 15px;
+  }
+
+  .todo-crear-panel,
+  .todo-vista-previa {
+    padding: 16px;
+  }
+
+  .todo-previa-tarjeta {
+    padding: 18px;
+  }
+
+  ul.todo-lista > li {
+    padding: 18px;
+  }
+}
+
+/* CORRECCIÓN DEL DISEÑO EN DOS COLUMNAS */
+
+h2 + div.todo-crear-layout {
+  max-width: none;
+  width: 100%;
+  margin: 24px 0 36px;
+}
+
+.todo-crear-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+}
+
+.todo-crear-panel,
+.todo-vista-previa {
+  min-width: 0;
+}
+
+@media (max-width: 800px) {
+  .todo-crear-layout {
+    grid-template-columns: 1fr;
+  }
+}

@@ -17,7 +17,7 @@ function TodoList({
   cancelarEdicion,
 }) {
   return (
-    <ul>
+    <ul className="todo-lista">
       {tareas.map((tarea) => (
         <TodoItem
           key={tarea.id}
