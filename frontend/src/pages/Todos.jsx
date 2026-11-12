@@ -211,7 +211,7 @@ import {
 
   return (
     <div>
-      <h1>Mis tareas</h1>
+      <h1>Lista de Tareas</h1>
 
       <p>Bienvenido: {usuario.email}</p>
 
@@ -241,7 +241,7 @@ import {
 
       <hr />
 
-      <h2>Lista de tareas</h2>
+      <h2>Mis Tareas</h2>
 
     <div>
     <label htmlFor="filtro-estado">
